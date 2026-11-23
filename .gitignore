@@ -5,3 +5,7 @@ __pycache__/
 *.pyc
 
 .pytest_temp/
+
+# Local elevation datasets (obtain from original provider)
+data/dem/*.tif
+data/dem/*.tiff
