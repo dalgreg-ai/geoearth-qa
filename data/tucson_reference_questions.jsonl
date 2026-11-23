@@ -1,0 +1,6 @@
+{"id":"tucson-elevation-min","question":"What is the minimum elevation in the supplied DEM (metres)?","answer":669,"tolerance":1,"source_metric":"elevation_min_m"}
+{"id":"tucson-elevation-max","question":"What is the maximum elevation in the supplied DEM (metres)?","answer":994,"tolerance":1,"source_metric":"elevation_max_m"}
+{"id":"tucson-elevation-range","question":"What is the elevation range in the supplied DEM (metres)?","answer":325,"tolerance":1,"source_metric":"elevation_range_m"}
+{"id":"tucson-elevation-mean","question":"What is the mean elevation of valid DEM pixels (metres)?","answer":754.2979,"tolerance":1,"source_metric":"elevation_mean_m"}
+{"id":"tucson-slope-mean","question":"What is the mean Horn 3x3 terrain slope (degrees)?","answer":3.4217,"tolerance":0.5,"source_metric":"slope_mean_degrees"}
+{"id":"tucson-slope-max","question":"What is the maximum Horn 3x3 terrain slope (degrees)?","answer":43.1785,"tolerance":0.5,"source_metric":"slope_max_degrees"}
