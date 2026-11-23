@@ -1,6 +1,7 @@
 """Evaluate JSONL model answers against independently calculated references."""
 import argparse
 import json
+import math
 from pathlib import Path
 
 
@@ -10,6 +11,8 @@ def load_jsonl(path):
 
 def score(questions, responses):
     reference = {q['id']: q for q in questions}
+    if len(reference) != len(questions):
+        raise ValueError('Duplicate question IDs')
     ids = [r['id'] for r in responses]
     if len(ids) != len(set(ids)):
         raise ValueError('Duplicate response IDs')
@@ -24,11 +27,14 @@ def score(questions, responses):
         if isinstance(answer, (int, float)) and not isinstance(answer, bool):
             try:
                 parsed = float(value)
-                correct = abs(parsed - float(answer)) <= q.get('tolerance', 0)
+                tolerance = float(q.get('tolerance', 0))
+                correct = (math.isfinite(parsed) and math.isfinite(float(answer))
+                           and math.isfinite(tolerance) and tolerance >= 0
+                           and abs(parsed - float(answer)) <= tolerance)
             except (ValueError, TypeError):
                 correct = False
         else:
-            correct = str(value).strip().casefold() == str(answer).strip().casefold()
+            correct = value is not None and str(value).strip().casefold() == str(answer).strip().casefold()
         details.append({'id': qid, 'correct': correct, 'expected': answer, 'submitted': value})
     missing = sorted(set(reference) - set(ids))
     details.extend({'id': qid, 'correct': False, 'expected': reference[qid]['answer'], 'submitted': None} for qid in missing)
