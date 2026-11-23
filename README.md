@@ -55,7 +55,17 @@ py -m src.evaluator --questions results/tucson/questions.jsonl --responses data/
 
 No model is called automatically; do not interpret generated reference questions as evidence that an AI system has been evaluated. The source raster, download provenance, raster preprocessing, and model identity should be preserved for a fully reproducible comparison.
 
-**Data and evaluation safeguards:** Local DEMs under `data/dem/` are gitignored. Never publish a model accuracy figure without collecting and retaining the actual model responses, model/version, prompt conditions, and evaluation date.\n\n## Optional Google Earth Engine workflow
+**Data and evaluation safeguards:** Local DEMs under `data/dem/` are gitignored. Never publish a model accuracy figure without collecting and retaining the actual model responses, model/version, prompt conditions, and evaluation date.\n\n## Preparing a genuine AI evaluation
+
+```powershell
+py -m src.export_blind_prompts
+```
+
+This exports `results/tucson/blind_prompts.jsonl` with question IDs and text, **excluding** numerical ground truth and tolerances. The benchmark is currently **data-dependent**: questions such as “What is the maximum elevation in the supplied DEM?” cannot be answered meaningfully unless the evaluated model is given access to the DEM or an explicit, controlled dataset summary. Giving the model the answer-bearing summary would instead test reading/repetition, not independent raster analysis. For a substantive model comparison, provide the same DEM and allowed analysis tools to each model, record prompts, tool use, outputs, and versions, then score the responses against `data/tucson_reference_questions.jsonl`.
+
+No accuracy results are claimed from the reference-only fixture or synthetic tests.
+
+## Optional Google Earth Engine workflow
 
 ```powershell
 py -m pip install -r requirements-earthengine.txt
