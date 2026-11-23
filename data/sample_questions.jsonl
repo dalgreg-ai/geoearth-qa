@@ -1,0 +1,10 @@
+{"id": "slope-01", "domain": "terrain", "question": "A site rises 10 m over a horizontal distance of 100 m. What is its slope in degrees?", "answer": 5.7106, "unit": "degrees", "tolerance": 0.1}
+{"id": "slope-02", "domain": "terrain", "question": "A site rises 25 m over a horizontal distance of 200 m. What is its slope in degrees?", "answer": 7.125, "unit": "degrees", "tolerance": 0.1}
+{"id": "relief-01", "domain": "terrain", "question": "What is the elevation range in meters for samples [940, 956, 983]?", "answer": 43, "unit": "m", "tolerance": 0.01}
+{"id": "relief-02", "domain": "terrain", "question": "What is the elevation range in meters for samples [1100, 1112, 1098]?", "answer": 14, "unit": "m", "tolerance": 0.01}
+{"id": "ndvi-01", "domain": "vegetation", "question": "Compute NDVI for NIR=0.6 and red=0.2.", "answer": 0.5, "unit": "unitless", "tolerance": 0.01}
+{"id": "ndvi-02", "domain": "vegetation", "question": "Compute NDVI for NIR=0.35 and red=0.25.", "answer": 0.1667, "unit": "unitless", "tolerance": 0.01}
+{"id": "vegetation-01", "domain": "vegetation", "question": "What fraction of NDVI pixels [0.1, 0.3, 0.4, 0.0] exceeds 0.2?", "answer": 0.5, "unit": "fraction", "tolerance": 0.001}
+{"id": "vegetation-02", "domain": "vegetation", "question": "What fraction of NDVI pixels [0.21, 0.19, 0.5, 0.6] exceeds 0.2?", "answer": 0.75, "unit": "fraction", "tolerance": 0.001}
+{"id": "runoff-01", "domain": "hydrology", "question": "A 1000 m\u00b2 site receives 0.025 m of rainfall with runoff coefficient 0.6. Estimate runoff volume in m\u00b3 using V=C\u00d7P\u00d7A.", "answer": 15.0, "unit": "m3", "tolerance": 0.01}
+{"id": "direction-01", "domain": "terrain", "question": "A high point has projected (east,north) coordinates (0,100) and a low point (100,0). What compass direction is downslope?", "answer": "SE", "unit": "compass", "tolerance": 0}

@@ -1,0 +1,67 @@
+{
+  "total": 10,
+  "correct": 3,
+  "accuracy": 0.3,
+  "details": [
+    {
+      "id": "slope-01",
+      "correct": true,
+      "expected": 5.7106,
+      "submitted": 5.7106
+    },
+    {
+      "id": "slope-02",
+      "correct": true,
+      "expected": 7.125,
+      "submitted": 7.125
+    },
+    {
+      "id": "relief-01",
+      "correct": true,
+      "expected": 43,
+      "submitted": 43
+    },
+    {
+      "id": "direction-01",
+      "correct": false,
+      "expected": "SE",
+      "submitted": null
+    },
+    {
+      "id": "ndvi-01",
+      "correct": false,
+      "expected": 0.5,
+      "submitted": null
+    },
+    {
+      "id": "ndvi-02",
+      "correct": false,
+      "expected": 0.1667,
+      "submitted": null
+    },
+    {
+      "id": "relief-02",
+      "correct": false,
+      "expected": 14,
+      "submitted": null
+    },
+    {
+      "id": "runoff-01",
+      "correct": false,
+      "expected": 15.0,
+      "submitted": null
+    },
+    {
+      "id": "vegetation-01",
+      "correct": false,
+      "expected": 0.5,
+      "submitted": null
+    },
+    {
+      "id": "vegetation-02",
+      "correct": false,
+      "expected": 0.75,
+      "submitted": null
+    }
+  ]
+}
