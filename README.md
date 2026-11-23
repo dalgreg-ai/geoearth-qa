@@ -1,6 +1,6 @@
 # GeoEarth QA — Geospatial AI Reasoning Benchmark
 
-An **independent**, reproducible Python prototype for evaluating numerical and spatial reasoning relevant to geographic and environmental workflows. Designed as a technical portfolio project; **not affiliated with Google**.
+An **independent**, reproducible Python prototype for evaluating numerical and spatial reasoning relevant to geographic and environmental workflows. Designed as a technical portfolio project; **not affiliated with Google**.\n\n**[Read the portfolio case study](docs/portfolio_case_study.md)** — problem, architecture, measured Tucson terrain results, QA decisions, and limitations.
 
 ## What it does
 
@@ -35,7 +35,7 @@ One JSON object per line, for example:
 
 The repository includes a reproducible terrain benchmark generator using a **local, projected** GeoTIFF. The source DEM is NASA SRTMGL1 elevation data for an illustrative Tucson-area rectangle (approximately longitude -111.05 to -110.85, latitude 32.15 to 32.30), downloaded through OpenTopography and reprojected to EPSG:32612 (UTM Zone 12N). The raster is not bundled with the source repository.
 
-A checked-in reference-question snapshot is available at `data/tucson_reference_questions.jsonl`; it contains **ground truth only**, not model outputs. An end-to-end integration test uses a synthetic GeoTIFF to exercise terrain analysis, benchmark generation, and the response scorer without downloading external data.\n\nThe independently observed elevation summary for the locally prepared raster was: **669 m minimum, 994 m maximum, 325 m range, 754.30 m mean** (402,259 valid pixels out of 402,300 raster cells; 27.9236 m pixel size). These are measurements of the selected rectangle, **not** the entire Tucson municipality. Terrain slope values are not claimed until the local generator has been executed on the raster.
+A checked-in reference-question snapshot is available at `data/tucson_reference_questions.jsonl`; it contains **ground truth only**, not model outputs. An end-to-end integration test uses a synthetic GeoTIFF to exercise terrain analysis, benchmark generation, and the response scorer without downloading external data.\n\nThe independently observed elevation summary for the locally prepared raster was: **669 m minimum, 994 m maximum, 325 m range, 754.30 m mean** (402,259 valid pixels out of 402,300 raster cells; 27.9236 m pixel size). These are measurements of the selected rectangle, **not** the entire Tucson municipality. Measured Horn 3×3 terrain slope values are documented in the [terrain baseline](docs/tucson_terrain_baseline.md): 3.4217° mean and 43.1785° maximum.
 
 Place the projected file at `data/dem/tucson_srtm_utm12.tif` and run:
 
