@@ -1,6 +1,6 @@
 # GeoEarth QA — Geospatial AI Reasoning Benchmark
 
-An **independent**, reproducible Python prototype for evaluating numerical and spatial reasoning relevant to geographic and environmental workflows. Designed as a technical portfolio project; **not affiliated with Google**.\n\n**[Read the portfolio case study](docs/portfolio_case_study.md)** — problem, architecture, measured Tucson terrain results, QA decisions, and limitations.
+An **independent**, reproducible Python prototype for evaluating numerical and spatial reasoning relevant to geographic and environmental workflows. Designed as a technical portfolio project; **not affiliated with Google**.\n\n**[Read the portfolio case study](docs/portfolio_case_study.md)** — problem, architecture, measured Tucson terrain results, QA decisions, and limitations.\n\n**[View the system architecture diagram](docs/architecture.md)** — source data, reference calculations, blind prompts, model-response scoring, and testing.
 
 ## What it does
 
