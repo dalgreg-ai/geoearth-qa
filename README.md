@@ -35,7 +35,7 @@ One JSON object per line, for example:
 
 The repository includes a reproducible terrain benchmark generator using a **local, projected** GeoTIFF. The source DEM is NASA SRTMGL1 elevation data for an illustrative Tucson-area rectangle (approximately longitude -111.05 to -110.85, latitude 32.15 to 32.30), downloaded through OpenTopography and reprojected to EPSG:32612 (UTM Zone 12N). The raster is not bundled with the source repository.
 
-The independently observed elevation summary for the locally prepared raster was: **669 m minimum, 994 m maximum, 325 m range, 754.30 m mean** (402,259 valid pixels out of 402,300 raster cells; 27.9236 m pixel size). These are measurements of the selected rectangle, **not** the entire Tucson municipality. Terrain slope values are not claimed until the local generator has been executed on the raster.
+A checked-in reference-question snapshot is available at `data/tucson_reference_questions.jsonl`; it contains **ground truth only**, not model outputs. An end-to-end integration test uses a synthetic GeoTIFF to exercise terrain analysis, benchmark generation, and the response scorer without downloading external data.\n\nThe independently observed elevation summary for the locally prepared raster was: **669 m minimum, 994 m maximum, 325 m range, 754.30 m mean** (402,259 valid pixels out of 402,300 raster cells; 27.9236 m pixel size). These are measurements of the selected rectangle, **not** the entire Tucson municipality. Terrain slope values are not claimed until the local generator has been executed on the raster.
 
 Place the projected file at `data/dem/tucson_srtm_utm12.tif` and run:
 
@@ -55,7 +55,7 @@ py -m src.evaluator --questions results/tucson/questions.jsonl --responses data/
 
 No model is called automatically; do not interpret generated reference questions as evidence that an AI system has been evaluated. The source raster, download provenance, raster preprocessing, and model identity should be preserved for a fully reproducible comparison.
 
-## Optional Google Earth Engine workflow
+**Data and evaluation safeguards:** Local DEMs under `data/dem/` are gitignored. Never publish a model accuracy figure without collecting and retaining the actual model responses, model/version, prompt conditions, and evaluation date.\n\n## Optional Google Earth Engine workflow
 
 ```powershell
 py -m pip install -r requirements-earthengine.txt
