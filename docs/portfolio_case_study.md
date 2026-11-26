@@ -37,6 +37,10 @@ A Tucson-area raster (675 × 596 pixels, approximately 27.92 m pixel resolution)
 
 **Interpretation:** These figures describe only the selected raster extent. They are not measurements of the whole city of Tucson. The source DEM is not committed to the repository; see [terrain baseline and provenance](tucson_terrain_baseline.md).
 
+## Google Earth visual companion
+
+[Open the Tucson terrain baseline map](https://earth.google.com/web/@32.225,-110.95,736.95117076a,29088.3177254d,30y,0h,0t,0r/data=CgRCAggBMikKJwolCiExSU05bHNlOGt5TUtHeW1sc3kwT3Q0ZVZuQy1qdHlwaEggAToDCgEwQgIIAEoICLynoacBEAE?pli=1) to inspect the approximate study rectangle and a placemark summarizing the local DEM reference calculations. The imported [KML source](tucson_terrain_baseline.kml) is available for inspection. This is a presentation of the measured extent and documentation links; the elevation raster is not overlaid in Google Earth, and the map is not a Google Earth Engine analysis. Google Earth's own on-map elevation estimates may differ from the locally processed raster statistics because they use a different display data source and method.
+
 ## Engineering decisions
 
 - **Projected coordinate system:** Slope uses horizontal distances in metres, not longitude/latitude degrees.
