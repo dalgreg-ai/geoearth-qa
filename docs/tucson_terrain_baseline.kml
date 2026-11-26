@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>GeoEarth QA — Tucson terrain baseline</name>
+    <description>Independent geospatial QA portfolio project by Gregory Dalton. This map marks the approximate extent of a locally processed Tucson-area SRTM elevation raster; the raster itself is not displayed.
+
+Measurements describe this selected raster extent. No AI model performance or Earth Engine analysis is claimed.
+
+Repository and methods: https://github.com/dalgreg-ai/geoearth-qa
+
+Independent project; not affiliated with Google or NASA.</description>
+    <Style id="study-area">
+      <LineStyle><color>ff23a9f2</color><width>3</width></LineStyle>
+      <PolyStyle><color>3323a9f2</color></PolyStyle>
+    </Style>
+    <Style id="baseline-point">
+      <IconStyle><color>ff23a9f2</color><scale>1.2</scale></IconStyle>
+    </Style>
+    <LookAt>
+      <longitude>-110.95</longitude><latitude>32.225</latitude><altitude>0</altitude>
+      <heading>0</heading><tilt>20</tilt><range>42000</range>
+    </LookAt>
+    <Placemark>
+      <name>Study area — approximate raster extent</name>
+      <description><![CDATA[
+        <p>Approximate bounding rectangle: 111.05° W to 110.85° W; 32.15° N to 32.30° N. The source raster was NASA SRTMGL1 elevation data obtained through OpenTopography and reprojected to EPSG:32612 (UTM Zone 12N) with bilinear resampling.</p>
+        <p>The outline communicates study scope. It is not a surveyed boundary, a municipal limit, or a pixel-exact raster footprint.</p>
+        <p><a href="https://github.com/dalgreg-ai/geoearth-qa/blob/main/docs/tucson_terrain_baseline.md">Read the terrain baseline and methods</a></p>
+      ]]></description>
+      <styleUrl>#study-area</styleUrl>
+      <Polygon>
+        <outerBoundaryIs><LinearRing><coordinates>
+          -111.05,32.15,0 -110.85,32.15,0 -110.85,32.30,0 -111.05,32.30,0 -111.05,32.15,0
+        </coordinates></LinearRing></outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Measured terrain baseline — selected extent</name>
+      <description><![CDATA[
+        <p><b>Local DEM reference calculations</b></p>
+        <ul>
+          <li>Elevation: 669.0 m minimum, 994.0 m maximum, 754.2979 m mean</li>
+          <li>Elevation range: 325.0 m</li>
+          <li>Mean Horn 3×3 slope: 3.4217°; maximum: 43.1785°</li>
+          <li>Valid elevation pixels: 402,259 of 402,300 raster cells</li>
+          <li>Pixel size: approximately 27.9236 m</li>
+        </ul>
+        <p>These values were computed locally from a projected GeoTIFF. The marker is a label at the approximate center of the study rectangle, not a point measurement. No AI model was scored and no live Earth Engine output is included.</p>
+        <p><a href="https://github.com/dalgreg-ai/geoearth-qa">Code and tests</a> · <a href="https://github.com/dalgreg-ai/geoearth-qa/blob/main/data/tucson_reference_questions.jsonl">Six reference questions</a></p>
+      ]]></description>
+      <styleUrl>#baseline-point</styleUrl>
+      <Point><coordinates>-110.95,32.225,0</coordinates></Point>
+    </Placemark>
+  </Document>
+</kml>
