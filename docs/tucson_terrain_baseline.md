@@ -29,6 +29,10 @@ The slope statistics were calculated using the same 3×3 Horn finite-difference 
 
 These values apply **only** to the specified Tucson-area raster extent. They do not describe the full city, municipal boundary, or metropolitan region. Maximum local slope from a 30 m-class DEM is sensitive to source data, reprojection, and derivative method. The statistics are a computational baseline, not an independent field survey.
 
+## Google Earth map
+
+[View the approximate study boundary and summary placemark](https://earth.google.com/web/@32.225,-110.95,736.95117076a,29088.3177254d,30y,0h,0t,0r/data=CgRCAggBMikKJwolCiExSU05bHNlOGt5TUtHeW1sc3kwT3Q0ZVZuQy1qdHlwaEggAToDCgEwQgIIAEoICLynoacBEAE?pli=1). The [KML source](tucson_terrain_baseline.kml) contains a bounding rectangle and a label at its center; neither is a pixel-exact raster footprint or a point measurement. The GeoTIFF itself is not displayed in this map. Google Earth's on-map terrain estimates come from its own display data and should not be substituted for the local calculations above.
+
 ## Reproduction and evaluation
 
 Run `py -m src.tucson_demo` with the projected DEM placed at `data/dem/tucson_srtm_utm12.tif`. This writes terrain statistics and six numerical reference questions. To score an actual model, collect its responses separately and use `py -m src.evaluator --questions results/tucson/questions.jsonl --responses YOUR_RESPONSES.jsonl --output results/tucson/model_report.json`.
